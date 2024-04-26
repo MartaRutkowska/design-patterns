@@ -11,6 +11,8 @@ var externalService = new ExternalService();
 var XmlAdapter = new XmlAdapter(externalService);
 Console.WriteLine(XmlAdapter.GetJsonData());
 
+Console.WriteLine();
+
 //Composite design pattern example - folders and files
 var root = new Folder("root");
 root.AddComponent(new File("file1"));
@@ -24,4 +26,11 @@ root.AddComponent(new File("file3"));
 
 root.DisplayChildren(string.Empty);
 
+Console.WriteLine();
+
+//Illustrating Facade pattern with absurd loan calculation system
+var CreditFacade = new CreditFacade();
+CreditFacade.CalculateClientsCredit(10000, 10000);
+CreditFacade.CalculateClientsCredit(100000, 300000);
+CreditFacade.CalculateClientsCredit(1000000, 80000);
 
