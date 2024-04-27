@@ -1,5 +1,4 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using System.Runtime.InteropServices;
 
 Console.WriteLine("Hello, World!");
 
@@ -34,3 +33,19 @@ CreditFacade.CalculateClientsCredit(10000, 10000);
 CreditFacade.CalculateClientsCredit(100000, 300000);
 CreditFacade.CalculateClientsCredit(1000000, 80000);
 
+//Illustrate flyweight design pattern
+var factory = new MonsterFlyweightFactory();
+var monsters = new Dictionary<int, MonsterFlyweight>();
+for (int i = 0; i < 40; i ++){
+    monsters[i] = factory.CreateMonster("dragon");
+}
+for (int i = 40; i< 80; i++){
+    monsters[i] = factory.CreateMonster("chimera");
+}
+for(int i = 81; i< 100; i++){
+    monsters[i] = factory.CreateMonster("griffin");
+}
+
+monsters[51].Hit();
+monsters[3].Move();
+monsters[98].Hit();
