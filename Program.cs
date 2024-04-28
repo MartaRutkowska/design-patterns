@@ -49,3 +49,15 @@ for(int i = 81; i< 100; i++){
 monsters[51].Hit();
 monsters[3].Move();
 monsters[98].Hit();
+Console.WriteLine();
+
+//Demonstrating decorator pattern
+var message = "hello loser";
+var printer = new MessegePrinter();
+printer.PrintMessege(message);
+Console.WriteLine();
+var starPrinter = new StarDecorator(printer);
+starPrinter.PrintMessege(message);
+Console.WriteLine();
+var dollarPrinter = new DollarDecorator(starPrinter);
+dollarPrinter.PrintMessege(message);
